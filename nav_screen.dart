@@ -3,9 +3,6 @@ import 'package:contact_state_app/kenny_speaks/speech_screen.dart';
 import 'package:contact_state_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'contacts.dart';
-import 'events.dart';
 import 'my_drawer_header.dart';
 import 'notes.dart';
 import 'notifications.dart';
@@ -29,8 +26,6 @@ class _HomePageState extends State<HomePage> {
       container = HomeScreen2();
     }else if(currentPage == DrawerSections.notes){
       container = SpeechScreen();
-    }else if(currentPage == DrawerSections.events){
-      container = EventsPage();
     }
     return Scaffold(
       appBar: AppBar(
@@ -71,8 +66,7 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.contacts ? true : false),
           menuItem(3, "AI Voice Assistant", Icons.mic,
               currentPage == DrawerSections.events?true :false),
-          //menuItem(4, "Calculator", Icons.calculate,
-            //   currentPage == DrawerSections.events?true :false),
+        
 
         ],
       ),
