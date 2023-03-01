@@ -13,6 +13,7 @@ The above document contained few bugs in the app and their possible fixes, it al
 <hr/>
 
 Note : I have added only the lib folder for proper organization, changes made in files belonging to other folders are be explained wherever necessary.
+Note 2 : I have added  the assests folder in lib folder , but it belongs in its parent directory, hence copy contents of this assets folder into original assets folder and delete this folder, same with the pubspec.yaml file.
 
 <h2>Technologies Used:</h2>
 
