@@ -4,6 +4,8 @@ Hello there, this is the official documentation of the <strong>orange.io</strong
 
 You can download the app from <a href="https://play.google.com/store/apps/details?id=com.mvedr.orangeio" >here</a> .
 
+You can also install it on your local machine , refrer <a href="https://github.com/mVedr/orange-io/blob/main/README.md#installation-and-setup">this</a>.
+
 Before trying the application, if possible please refer to this <a href="https://github.com/mVedr/orange-io/blob/main/Depencies.md">document</a> for smooth functioning and a good experience while using the application.
 
 <h3>tl;dr</h3>
