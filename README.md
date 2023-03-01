@@ -199,4 +199,4 @@ Or you can copy paste all these dependencies in your pubspec.yaml file and then 
 Store the API key very safely, if possible using a .env file.
 
 <h4> 8) Ok, now you're all set, select an appropriate device and then run the application to witness the magic😉 .
-
+<h5> PS : Make sure that the mic is turned on in the virtual device you are using ,  you can refer to<a href="https://stackoverflow.com/questions/5924190/how-do-you-enable-a-microphone-input-in-the-android-emulator">this </a> .</h5>
