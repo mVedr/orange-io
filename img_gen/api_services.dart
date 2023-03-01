@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:contact_state_app/.env';
 import 'package:http/http.dart' as http;
 import 'package:contact_state_app/img_gen/api_key.dart';
 
@@ -8,19 +8,16 @@ class Api {
 
   static final headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer $apiKey"
+    "Authorization": "Bearer $ENV_API_KEY"
   };
 
   static generateImage(String text, String size) async {
-    var res = await http.post(
-        url,
+    var res = await http.post(url,
         headers: headers,
         body: jsonEncode({"prompt": text, "n": 1, "size": size}));
-    if(res.statusCode==200){
-      var data= jsonDecode(res.body.toString());
+    if (res.statusCode == 200) {
+      var data = jsonDecode(res.body.toString());
       return data['data'][0]['url'].toString();
-    }else{
-
-    }
+    } else {}
   }
 }
