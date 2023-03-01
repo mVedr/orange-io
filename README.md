@@ -64,7 +64,6 @@ Packages and Dependencies Used:
   <td> <a href="https://pub.dev/packages/flutter_tts">flutter_tts</a> </td>
   </tr>
 </table>
-  Info About Dependencies:
   
-  1)
-  
+
+
