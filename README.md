@@ -4,7 +4,7 @@ Hello there, this is the official documentation of the <strong>orange.io</strong
 
 You can download the app from <a href="https://play.google.com/store/apps/details?id=com.mvedr.orangeio" >here</a> .
 
-Before trying the application, if possible please refer to this document for smooth functioning and a good experience while using the application.
+Before trying the application, if possible please refer to this <a href="https://github.com/mVedr/orange-io/blob/main/Depencies.md">document</a> for smooth functioning and a good experience while using the application.
 
 <h3>tl;dr</h3>
 The above document contained few bugs in the app and their possible fixes, it also had a list of newer features which I would love to implement in the future. Feel free to mention any new ideas .
