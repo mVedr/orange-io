@@ -16,6 +16,8 @@ Note : I have added only the lib folder for proper organization, changes made in
 
 Note 2 : I have added  the assests folder in lib folder , but it belongs in its parent directory, hence copy contents of this assets folder into original assets folder and delete this folder, same with the pubspec.yaml file.
 
+Note 3 : Similarly I have added pubspec.yaml which belongs to the root directory and build.gradle which belongs to android/app/ , replace those files' contents with these contents and replace them wih these files' content and delete these files.
+
 <h2>Technologies Used:</h2>
 
 <b>FlutterFire , which consists of:</b>
