@@ -146,9 +146,11 @@ If the command is working it will list out all the requirements for flutter to r
 <img width="468"  alt="image" src="https://user-images.githubusercontent.com/94962003/222253184-8b2f63c2-8cec-46a9-b575-b7f1072d010a.png">
 
 <h4> 2) Create a new Flutter App In Your Required Directory</h4>
-Run the following command : 
 
-flutter create your_app
+
+Run the following command : (Use the name <b>'contact_state_app'</b> as all packages are named after this)
+
+flutter create contact_state_app
 <hr/>
 
 <h4> 3) Clone <a href="https://github.com/mVedr/orange-io/">this</a> repo , then replace the <b>original lib</b> folder in your app with this <b>new lib</b> folder.
