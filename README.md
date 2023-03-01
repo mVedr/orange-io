@@ -1,18 +1,22 @@
-Hello there, this is the official documenhtation of the <b>orange.io</b> github repo, orange.io is a complete functionality AI assistant, it is equipped with both text generation and image generation. Icing on the cake is you need not even type anything, it can be controlled by voice commands.
+<h1>Official Documentation</h1>
+
+Hello there, this is the official documentation of the <strong>orange.io</strong> github repo, orange.io is a complete functionality AI assistant, it is equipped with both text generation and image generation. Icing on the cake is you need not even type anything, it can be controlled by voice commands.
 
 You can download the app from <a href="https://play.google.com/store/apps/details?id=com.mvedr.orangeio" >here</a> .
 
 Before trying the application, if possible please refer to this document for smooth functioning and a good experience while using the application.
 
 <h3>tl;dr</h3>
-The above document contained few bugs in the app and their possible fixes, it also had a list of newer features which I would love to implement in the future.
+The above document contained few bugs in the app and their possible fixes, it also had a list of newer features which I would love to implement in the future. Feel free to mention any new ideas .
 
+
+<hr/>
 
 Note : I have added only the lib folder for proper organization, changes made in files belonging to other folders are be explained wherever necessary.
 
-Technologies Used:
+<h2>Technologies Used:</h2>
 
-FlutterFire , which consists of:
+<b>FlutterFire , which consists of:</b>
 1) <b>Flutter</b> (For Frontend)
 2) <b> Google Firebase </b>(For Backend and User Authentication)
 
