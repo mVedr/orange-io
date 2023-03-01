@@ -65,5 +65,38 @@ Packages and Dependencies Used:
   </tr>
 </table>
   
+You can click <a href="https://github.com/mVedr/orange-io/blob/main/Depencies.md">here</a> for additional info about some of the packages used.
 
+Project Structure:
 
+I coded the entire project as 3 seperate modules :
+
+<h2>Authentication Using Firebase:</h2>
+<h3>Code/Changes not present in the git repo:</h3>
+
+In this module I first made a new project on the firebase console, we then get an auto generated json called google-services.json.
+
+Add this google-services.json to androird/app/ folder, please store it carefully, in this case I didn't have the need to add because I have not added the android folder to git.
+
+<h2>Voice Assistant:</h2>
+<h3>Code/Changes not present in the git repo:</h3>
+
+This was a bit challenging part to code, as we require many functionalities and permissions which are not allowed by default.
+
+<h4>We need to add the following xml to android/app/src/main/Manifest.xml :</h4>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <intent> <action android:name="android.intent.action.TTS_SERVICE" /></intent>
+    </queries>
+We need the permission of the user inorder to record and respond to their audio, thus be sure to make the following change to the file.
+
+<h2>AI Image Generator:</h2>
+<h3>Code/Changes not present in the git repo:</h3>
