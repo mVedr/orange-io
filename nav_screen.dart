@@ -7,7 +7,13 @@ import 'my_drawer_header.dart';
 import 'notes.dart';
 import 'notifications.dart';
 
-
+// Used For Drawer Navigation and Detecting The Curent Page
+enum DrawerSections {
+  dashboard,
+  contacts,
+  events,
+  notes
+}
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,17 +21,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var currentPage = DrawerSections.dashboard;
+  var currentPage = DrawerSections.dashboard; //Current Page
 
   @override
   Widget build(BuildContext context) {
     var container;
     if (currentPage == DrawerSections.dashboard) {
-      container = HomeScreen();
+      container = HomeScreen(); // Login/Register Screen
     } else if (currentPage == DrawerSections.contacts) {
-      container = HomeScreen2();
+      container = HomeScreen2(); //Image Generation Screen
     }else if(currentPage == DrawerSections.notes){
-      container = SpeechScreen();
+      container = SpeechScreen(); // Text/Voice Generation Screen
     }
     return Scaffold(
       appBar: AppBar(
@@ -42,8 +48,8 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             child: Column(
               children: [
-                MyHeaderDrawer(),
-                MyDrawerList(),
+                MyHeaderDrawer(), //Header For Drawer
+                MyDrawerList(), //Different Pages To Navigate To
               ],
             ),
           ),
@@ -66,8 +72,6 @@ class _HomePageState extends State<HomePage> {
               currentPage == DrawerSections.contacts ? true : false),
           menuItem(3, "AI Voice Assistant", Icons.mic,
               currentPage == DrawerSections.events?true :false),
-        
-
         ],
       ),
     );
@@ -120,9 +124,3 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-enum DrawerSections {
-  dashboard,
-  contacts,
-  events,
-  notes
-}
