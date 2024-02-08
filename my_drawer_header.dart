@@ -21,9 +21,6 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
             height: 10,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-             // image: DecorationImage(
-              //  image: AssetImage('https://lh3.googleusercontent.com/ogw/AOh-ky3jsoEutAKKqEPRKSn3fNxHtUwjsIWw9AdEKnvH=s64-c-mo'),
-             // ),
             ),
           ),
           SizedBox(
