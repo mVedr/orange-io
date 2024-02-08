@@ -1,3 +1,4 @@
+//User Model/Class for storing info in firestore/firebase-auth
 class UserModel {
   String? uid;
   String? email;
