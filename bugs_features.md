@@ -11,8 +11,6 @@
   
 <h1>New Features</h1>
   
-  <h2> Giving User the choice of either typing in the request or via their voice. </h2>
-  
   <h2> Giving user the choice to select the pitch and speed of the voice assistant. </h2>
   
   <h2> Limiting each user to a fixed number of requests for minimising traffic </h2>
