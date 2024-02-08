@@ -15,12 +15,19 @@ class SpeechScreen extends StatefulWidget {
 }
 
 class _SpeechScreenState extends State<SpeechScreen> {
+  // SpeechToText Singleton
   SpeechToText speechToText = SpeechToText();
 
   var text = "Hold Button To Start Speaking ! ";
+  
   var isListening = false;
+  
+  //Store all the prompts and responses in a lsit
   final List<ChatMessage> messages = [];
+  
   var scrollController = ScrollController();
+  
+  //For scrolling down the messages
   scrollMethod() {
     scrollController.animateTo(scrollController.position.maxScrollExtent,
         duration: Duration(milliseconds: 300), curve: Curves.easeOut);
@@ -40,13 +47,17 @@ class _SpeechScreenState extends State<SpeechScreen> {
           repeat: true,
           child: GestureDetector(
             onTapDown: (details) async {
+              // If the app is not listening, tts gets initialized
               if (!isListening) {
                 var available = await speechToText.initialize();
+                // If initialized properly, we can start listening
                 if (available) {
                   setState(() {
-                    isListening = true;
+                    isListening = true; 
+                    //We are now listening
                     speechToText.listen(onResult: (result) {
                       setState(() {
+                        // we get the text that TTS interpreted
                         text = result.recognizedWords;
                       });
                     });
@@ -58,18 +69,24 @@ class _SpeechScreenState extends State<SpeechScreen> {
               setState(() {
                 isListening = false;
               });
+              //Now stopping the TTS singleton
               await speechToText.stop();
+              //If the text is empty or is same as the placeholder, we call the API
               if(text.isNotEmpty && text!="Hold Button To Start Speaking ! ")
-              {messages.add(ChatMessage(text: text, type: ChatMessageType.user));
+              {
+              messages.add(ChatMessage(text: text, type: ChatMessageType.user));
+              // We are waiting for the API to respond
               var msg = await ApiServices.sendMessage(text);
               msg= msg.trim();
               setState(() {
                 messages.add(ChatMessage(text: msg, type: ChatMessageType.bot));
               });
+              // Once the API responded, we convert the reponse text to voice
               Future.delayed(const Duration(milliseconds: 500),(){
                 TextToSpeech.speak(msg);
               });
               }else{
+                // If voice is not interpreted correctly, the user tries again
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Please Try Again!")));
               }
             },
@@ -85,9 +102,8 @@ class _SpeechScreenState extends State<SpeechScreen> {
 
       body: Container(
         alignment: Alignment.center,
-        //  color: Colors.red,
         padding: EdgeInsets.symmetric(horizontal: 14, vertical: 0),
-         margin: EdgeInsets.only(bottom: 20),
+        margin: EdgeInsets.only(bottom: 20),
         child: Column(
           children: [
             Text(
@@ -99,7 +115,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
               ),
             ),
             Expanded(
-                child: Container(
+              child: Container(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 decoration: BoxDecoration(
@@ -110,8 +126,10 @@ class _SpeechScreenState extends State<SpeechScreen> {
                   shrinkWrap: true,
                   controller: scrollController,
                   physics: const BouncingScrollPhysics(),
+                  //We are displaying the messages as a List
                   itemBuilder: (BuildContext context, int index) {
                     var chat = messages[index];
+                    //We are displaying all the stored messages
                     return ChatBubble(
                         chattext: chat.text, type: chat.type);
                   },
