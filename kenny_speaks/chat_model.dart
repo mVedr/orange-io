@@ -1,4 +1,4 @@
-
+//Model/Class For Messages 
 enum ChatMessageType {user,bot}
 
 class ChatMessage{
