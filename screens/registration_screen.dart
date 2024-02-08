@@ -19,13 +19,9 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
 
-  // string for displaying the error Message
   String? errorMessage;
 
-
-  // our form key
   final _formKey = GlobalKey<FormState>();
-  // editing Controller
   final firstNameEditingController = new TextEditingController();
   final secondNameEditingController = new TextEditingController();
   final emailEditingController = new TextEditingController();
@@ -198,7 +194,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            // passing this to our root
             Navigator.of(context).pop();
           },
         ),
@@ -243,12 +238,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       ),
     );
   }
+
+  //Signup Functionality For User Through Firebase
   void signUp(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       try {
         await _auth
             .createUserWithEmailAndPassword(email: email, password: password)
-            .then((value) => {postDetailsToFirestore()})
+            .then((value) => {
+   //After Creating A User Through FireBase Auth ...we send the data to firestore
+              postDetailsToFirestore()
+              })
             .catchError((e) {
           Fluttertoast.showToast(msg: e!.message);
         });
@@ -280,17 +280,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       }
     }
   }
+  
   postDetailsToFirestore() async {
-    // calling our firestore
-    // calling our user model
-    // sedning these values
 
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     User? user = _auth.currentUser;
 
     UserModel userModel = UserModel();
 
-    // writing all the values
     userModel.email = user!.email;
     userModel.uid = user.uid;
     userModel.firstName = firstNameEditingController.text;
@@ -304,6 +301,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
     Navigator.pushAndRemoveUntil(
         (context),
+      //After Signing In, we move to HomePage
         MaterialPageRoute(builder: (context) => HomePage()),
             (route) => false);
   }
