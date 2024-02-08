@@ -5,11 +5,13 @@ import 'package:http/http.dart' as http;
 class ApiServices {
   static String baseUrl = "https://api.openai.com/v1/completions";
 
+  // header for post request
   static Map<String, String> header = {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer $ENV_API_KEY'
   };
 
+  //Function for sending prompt data to api for fetching details
   static sendMessage(String? message) async {
     if (message != null) {
       var res = await http.post(Uri.parse(baseUrl),
