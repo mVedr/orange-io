@@ -93,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen2> {
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton(
                           icon: Icon(Icons.expand),
+                          //Generating a dropdown for different sizes
                           value: dropValue,
                           items: List.generate(
                               sizes.length,
