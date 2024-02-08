@@ -152,8 +152,11 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+  // Login / Signin Function for the user
   void signIn(String email, String password) async {
     if (_formKey.currentState!.validate()) {
+      // Validating User Data through firebase
       try {
         await _auth
             .signInWithEmailAndPassword(email: email, password: password)
